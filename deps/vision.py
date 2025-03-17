@@ -1,5 +1,4 @@
 import cv2
-from deepface import DeepFace
 
 # Initialize the video capture object for webcam (use 0 for default camera)
 cap = cv2.VideoCapture(0)
@@ -20,13 +19,13 @@ try:
 
         # Analyze the current frame with DeepFace
         try:
-            results = DeepFace.analyze(img_path=frame, actions=['age', 'gender', 'emotion', 'race'], enforce_detection=False)
+            #results = DeepFace.analyze(img_path=frame, actions=['age', 'gender', 'emotion', 'race'], enforce_detection=False)
             # Access the first (and only) result
-            result = results[0]
-
+            #result = results[0]
+            pass
             # Display the analysis results on the frame
-            text = f"Age: {result['age']}, Gender: {result['gender']}, Emotion: {result['dominant_emotion']}, Race: {result['dominant_race']}"
-            cv2.putText(frame, text, (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 0), 1, cv2.LINE_AA)
+            #text = f"Age: {result['age']}, Gender: {result['gender']}, Emotion: {result['dominant_emotion']}, Race: {result['dominant_race']}"
+            #cv2.putText(frame, text, (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 0), 1, cv2.LINE_AA)
         
         except Exception as e:
             print("Analysis error:", str(e))
